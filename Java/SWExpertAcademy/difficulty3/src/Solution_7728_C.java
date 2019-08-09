@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Solution_7728 {
+public class Solution_7728_C {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
@@ -13,13 +13,14 @@ public class Solution_7728 {
 	}
 	public static int diversity(String s) {
 		char[] c = s.toCharArray();
+		int[] numbers = new int[10];
 		int count = 0;
-		outer:for (int i = 0; i < c.length; i++) {
-			for (int j = 0; j < c.length; j++) {
-				if(c[i]==c[j]);
-					continue outer;
-			}
-			count ++;
+		for (int i = 0; i < c.length; i++) {
+			numbers[(c[i]-'0')]++;
+		}
+		for (int i = 0; i < numbers.length; i++) {
+			if(numbers[i]>0)
+				count ++;
 		}
 		return count;
 	}
