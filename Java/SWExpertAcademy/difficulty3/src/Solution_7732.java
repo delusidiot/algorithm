@@ -1,17 +1,19 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Solution_7732 {
-	static Scanner sc;
-	public static void main(String[] args) {
-		//현재시간보다 약속 시각이 빠른 경우 약속이 다음날에 있는것.
-		// 00:00:00
-		sc = new Scanner(System.in);
-		int T = sc.nextInt();
-		sc.nextLine();
+//	static Scanner sc;
+	static BufferedReader br;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		br = new BufferedReader(new InputStreamReader(System.in));
+//		sc = new Scanner(System.in);
+//		int T = sc.nextInt();
+		int T = Integer.parseInt(br.readLine());
+//		sc.nextLine();
 		for (int testCase = 1; testCase <= T; testCase++) {
-			String curruntTime = sc.nextLine();
-			String promiseTime = sc.nextLine();
+			String curruntTime = br.readLine();
+			String promiseTime = br.readLine();
 			String result = leftTime(curruntTime, promiseTime);
 			System.out.println("#"+testCase+" "+result);
 		}

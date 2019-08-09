@@ -1,57 +1,61 @@
-import java.util.Scanner;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+//실행시간 줄이기
 public class Solution_7853 {
-	static boolean[] checked = null;
-	static int count = 0 ;
-	static Scanner sc;
-	public static void main(String[] args) {
-		sc = new Scanner(System.in);
-		int T = sc.nextInt();
-		sc.nextLine();
-		
+	static BufferedReader br;
+	static Set<String> typingErrors = null;
+	static char[] ch2 = null;
+	static long count = 0;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		br = new BufferedReader(new InputStreamReader(System.in));
+		int T = Integer.parseInt(br.readLine());
 		for (int testCase = 1; testCase <= T; testCase++) {
-			String string = sc.nextLine();
+			String string = br.readLine();
 			char[] ch = string.toCharArray();
-			checked = new boolean[ch.length];
+			ch2 = string.toCharArray();
 			count = 0;
+			typingErrors = new HashSet<>();
 			typingError(ch, 0);
+			Iterator<String> it = typingErrors.iterator();
+			while(it.hasNext()) {
+				it.next();
+				count ++;
+			}
 			System.out.println("#"+testCase+" "+count);
 		}
 	}
 	public static void typingError(char[] ch, int start) {
 		if(start == ch.length) {
-			count ++;
-			System.out.print(count+" : ");
+			StringBuilder result = new StringBuilder();
 			for (int i = 0; i < ch.length; i++) {
-				System.out.print(ch[i]);
+				result.append(ch[i]);
 			}
-			System.out.println();
+			
+			typingErrors.add(result.toString());
 			return;
 		}
-		char temp;
-		
-
-		if(start!=0) {				//i-1
-			if(ch[start]==ch[start-1]) {
-			}
-			else {
-				temp = ch[start-1];
-				ch[start-1]=ch[start];
+		char temp = '\u0000';
+		if(start>0) {
+			if(ch[start]==ch2[start-1]) {
+			}else {
+				temp = ch[start];
+				ch[start]=ch2[start-1];
 				typingError(ch, start+1);
-				ch[start-1]=temp;
+				ch[start]=temp;
 			}
 		}
-		
-		typingError(ch, start+1);	//i
-		
-		if(start!=ch.length-1) {		//i+1
-			if(ch[start]==ch[start+1]) {
-			}
-			else {
-//				temp = ch[start+1];
-				ch[start+1]=ch[start];
+		typingError(ch, start+1);
+		if(start<ch.length-1){
+			if(ch[start]==ch2[start+1]) {
+			}else {
+				temp = ch[start];
+				ch[start] = ch2[start+1];
 				typingError(ch, start+1);
-//				ch[start+1] = temp;
+				ch[start] = temp;
 			}
 		}
 	}
