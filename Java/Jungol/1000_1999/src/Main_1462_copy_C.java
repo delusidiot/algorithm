@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Main_1462_copy {
+public class Main_1462_copy_C {
 	static Scanner sc;
 	static int[] dx = {1, -1, 0, 0};
 	static int[] dy = {0, 0, 1, -1};
@@ -22,16 +22,10 @@ public class Main_1462_copy {
 			map[i]=line.toCharArray();
 		}
 		boolean[][] checked = new boolean[row][column];
-		for (int i = 0; i < map.length; i++) {
-			for (int j = 0; j < map[0].length; j++) {
-				if(map[i][j]=='W') {
-					checked[i][j] = true;
-				}
-			}
-		}
-		
+		max =0;
 		for (int i = 0; i < checked.length; i++) {
 			for (int j = 0; j < checked[0].length; j++) {
+				createBool(map, checked);
 				if(!checked[i][j]) {
 					BFS(row, column, i, j, checked);
 					if(max<count) {
@@ -40,7 +34,18 @@ public class Main_1462_copy {
 				}
 			}
 		}
-		System.out.println(count);
+		System.out.println(max-1);
+	}
+	public static void createBool(char[][] map,boolean[][] checked) {
+		for (int i = 0; i < map.length; i++) {
+			for (int j = 0; j < map[0].length; j++) {
+				if(map[i][j]=='W') {
+					checked[i][j] = true;
+				}else {
+					checked[i][j] = false;
+				}
+			}
+		}
 	}
 	public static void BFS(int row,int col, int i, int j, boolean[][] checked) {
 		Queue<Integer> qx = new LinkedList<Integer>();
