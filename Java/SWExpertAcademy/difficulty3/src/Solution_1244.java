@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Solution_1244 {
 	static Scanner sc;
 	static int max = 0;
+	static int count2 = 0;
 	public static void main(String[] args) {
 		sc = new Scanner(System.in);
 		int T = sc.nextInt();
@@ -15,6 +16,7 @@ public class Solution_1244 {
 			max = Integer.parseInt(input.split(" ")[0]);
 			dfs(0, 0, change, numberInfo);
 			System.out.println("#"+testCase+" "+max);
+			System.out.println(count2);
 		}
 	}
 	public static void dfs(int start, int count, int change,char[] numberInfo) {
@@ -30,6 +32,7 @@ public class Solution_1244 {
 		for (int i = start; i < numberInfo.length; i++) {
 			for (int j = i+1; j < numberInfo.length; j++) {//모든 교환 방법을 다 해본다.
 				if(numberInfo[i] <= numberInfo[j]) {
+					count2 ++;
 					char temp;
 					temp = numberInfo[i];
 					numberInfo[i] = numberInfo[j];
@@ -38,6 +41,9 @@ public class Solution_1244 {
 					temp = numberInfo[i];
 					numberInfo[i] = numberInfo[j];
 					numberInfo[j] = temp;
+				}
+				else {
+					
 				}
 			}
 		}

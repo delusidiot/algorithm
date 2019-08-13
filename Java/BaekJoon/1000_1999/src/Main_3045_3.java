@@ -90,7 +90,7 @@ class DoublyLinkedList {
         
         return node;
     }
-    public void addFirst(int data){
+    public void addFirst(Object data){
 
     	// 데이터를 담은 새로운 노드 생성
     	Node newNode = new Node(data);    
