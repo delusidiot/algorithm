@@ -1,5 +1,4 @@
 import java.util.Scanner;
-// testCase 가 깔끔하게 안들어 있어서 배열 안됨......
 public class Solution_1232_Group_2 {
 	static Scanner sc;
 	static final int T =10;
