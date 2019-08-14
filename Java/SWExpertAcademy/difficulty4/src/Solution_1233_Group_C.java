@@ -1,6 +1,6 @@
 import java.util.Scanner;
 // testCase 가 깔끔하게 안들어 있어서 배열 안됨......
-public class Solution_1233_Group {
+public class Solution_1233_Group_C {
 	static Scanner sc;
 	static final int T =10;
 	class Node{
