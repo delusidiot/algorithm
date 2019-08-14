@@ -1,6 +1,6 @@
 import java.util.Scanner;
-// testCase 가 깔끔하게 안들어 있어서 배열 안됨......
-public class Solution_1232_Group_2 {
+
+public class Solution_1233_Group_C {
 	static Scanner sc;
 	static final int T =10;
 	public static void main(String[] args) {
@@ -14,32 +14,28 @@ public class Solution_1232_Group_2 {
 				vertex[i]= sc.nextLine();
 			}
 			result = postOrder(vertex, 1);
-			System.out.println("#"+testCase+" "+(int)result);
+			if(result<0) {
+				System.out.println("#"+testCase+" 0");
+			}else {
+				System.out.println("#"+testCase+" 1");
+			}
+			
 		}
 	}
 	static double postOrder(String[] vertex,int start) {
 		double result = 0;
-		if(vertex[start].split(" ").length<=2) {
-			return Double.parseDouble(vertex[start].split(" ")[1]);
+		if(vertex[start].split(" ").length<=3) {
+			if(vertex[start].split(" ")[1].equals("-")||
+			   vertex[start].split(" ")[1].equals("-")||
+			   vertex[start].split(" ")[1].equals("-")||
+			   vertex[start].split(" ")[1].equals("-")) {
+				return -1;
+			}
+			return 0;
 		}
 		double a =postOrder(vertex, Integer.parseInt(vertex[start].split(" ")[2]));
 		double b =postOrder(vertex, Integer.parseInt(vertex[start].split(" ")[3]));
-		switch (vertex[start].split(" ")[1]) {// 연산자
-		case "-":
-			result = a-b;
-			break;
-		case "+":
-			result = a+b;
-			break;
-		case "*":
-			result = a*b;
-			break;
-		case "/":
-			result = a/b;
-			break;
-		default:
-			break;
-		}
+		result = a+b;
 		return result;
 	}
 }
