@@ -5,6 +5,7 @@ public class Solution_7584_F {
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
 		String P = makeP();
+		System.out.println(P);
 		for (int testCase = 1; testCase <= T; testCase++) {
 			int K = sc.nextInt();
 			System.out.println("#"+testCase+" "+P.charAt(K-1));
@@ -13,7 +14,7 @@ public class Solution_7584_F {
 	}
 	public static String makeP() {
 		String start = "0";
-		while(start.length()<=100000) {
+		while(start.length()<=10000) {
 			start = start+"0"+f(g(start));
 		}
 		return start;

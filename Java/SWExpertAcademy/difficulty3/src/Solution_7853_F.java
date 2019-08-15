@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 //실행시간 줄이기
-public class Solution_7853 {
+public class Solution_7853_F {
 	static BufferedReader br;
 	static Set<String> typingErrors = null;
 	static char[] ch2 = null;
