@@ -1,14 +1,21 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TestClass {
 	static Scanner sc;
 	public static void main(String[] args) {
-		sc = new Scanner(System.in);
-		int testCase = 10;
-		for (int i = 1; i <= testCase; i++) {
-			sc.nextInt();
-			System.out.println("#"+i+" "+doPow2(sc.nextInt(), sc.nextInt()));
+		int[] test = {5,3,1,2,4};
+		int key;
+		for (int i = 1; i < test.length; i++) {
+			key = test[i];
+			int j=i-1;
+			while(j>=0&&test[j]>key) {
+				test[j+1]=test[j];
+				j--;
+			}
+			test[j+1]=key;
 		}
+		System.out.println(Arrays.toString(test));
 	}
 	private static int doPow2(int base, int exp) {
 		int newBase = 0;
