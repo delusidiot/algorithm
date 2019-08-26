@@ -39,4 +39,6 @@ public class Solution_1251{
 		}
 		bw.close();
 	}
+	public static void dijkstra() {
+	}
 }
