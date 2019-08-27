@@ -12,7 +12,6 @@ class Island implements Comparable<Island> {
 	double weight;
 
 	Island(int number, int x, int y, double weight) {
-
 		this.number = number;
 		this.x = x;
 		this.y = y;

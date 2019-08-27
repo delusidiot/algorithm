@@ -17,18 +17,33 @@ public class Solution_8382 {
 			int y1 = Integer.parseInt(st.nextToken());
 			int x2 = Integer.parseInt(st.nextToken());
 			int y2 = Integer.parseInt(st.nextToken());
-			//시작을 가로 또는 세로 둘중 아무거나 가능하다는 것은 하나로 딱 지정해도 답에는 딱히 상관이 없다는것이렸다?
-			//최소군....
+
 			int count = 0;
-			int rc = 0;
-			if(Math.abs(y2-y1)>Math.abs(x2-x1)) {
-				rc =2;
+			int absX = Math.abs(x2-x1);
+			int absY = Math.abs(y2-y1);
+			if(absX>absY) {//x부터 시작
+				while(true) {
+					if(x2==x1&&y2==y1)break;
+					if(x1>x2) x1--;
+					else x1++;
+					count++;
+					if(x2==x1&&y2==y1)break;
+					if(y1>y2) y1--;
+					else y1++;
+					count++;
+				}
+			}else {//y부터 시작
+				while(true) {
+					if(x2==x1&&y2==y1)break;
+					if(y1>y2) y1--;
+					else y1++;
+					count++;
+					if(x2==x1&&y2==y1)break;
+					if(x1>x2) x1--;
+					else x1++;
+					count++;
+				}
 			}
-			while(true) {
-				if(true)
-					break;
-			}
-			
 			bw.write("#"+testCase+" "+count+"\n");
 			bw.flush();
 		}
