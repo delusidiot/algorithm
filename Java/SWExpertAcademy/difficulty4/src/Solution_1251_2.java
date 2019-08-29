@@ -25,7 +25,7 @@ class Island implements Comparable<Island> {
 	}
 }
 
-public class Solution {
+public class Solution_1251_2 {
 
 	static PriorityQueue<Island> priorityQueue = new PriorityQueue<>();
 	static ArrayList<Island> islands = new ArrayList<>();
