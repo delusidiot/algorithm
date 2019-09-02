@@ -18,6 +18,7 @@ public class Solution_8425 {
 			}
 			int max = 8;
 			int result = 0;
+			
 			for (int i = 0; i < max; i++) {
 				for (int j = 0; j < stone.length; j++) {
 					if(stone[j]==0) continue;
@@ -27,6 +28,7 @@ public class Solution_8425 {
 				if(result%2==1) {
 					break;
 				}
+				result = 0;
 			}
 			bw.write("#"+testCase+" "+(result%2)+"\n");
 			bw.flush();
