@@ -1,4 +1,4 @@
-//´Ù¸¥ ÀÌ»óÇÑÁş Á¶±İÀÌ¶óµµ ÇÏ¸é ÅÍÁü...
+//ë‹¤ë¥¸ ì´ìƒí•œì§“ ì¡°ê¸ˆì´ë¼ë„ í•˜ë©´ í„°ì§...
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -14,8 +14,8 @@ public class Main_1863_C {
 		br = new BufferedReader(new InputStreamReader(System.in));
 		bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = new StringTokenizer(br.readLine()," ");
-		int n = Integer.parseInt(st.nextToken()); //ÇĞ»ı¼ö
-		int m = Integer.parseInt(st.nextToken()); //Á¶»çµÈ Á¾±³ ÇĞ»ı ¼ıÀÚ.
+		int n = Integer.parseInt(st.nextToken()); //í•™ìƒìˆ˜
+		int m = Integer.parseInt(st.nextToken()); //ì¡°ì‚¬ëœ ì¢…êµ í•™ìƒ ìˆ«ì.
 		student = new int[n+1];
 		count = 0;
 		for (int i = 1; i <= n; i++) {
