@@ -6,23 +6,17 @@ public class Main_1592 {
 		int N = sc.nextInt();
 		int M = sc.nextInt();
 		int L = sc.nextInt();
-		int[] Ncatch = new int[N+1];
-		int i = 1;
+		int[] Ncatch = new int[N];
+		int i = 0;
 		int count = 0;
 		while(true) {
 			Ncatch[i]++;
-			count++;
 			if(Ncatch[i]==M)break;
+			count++;
 			if(Ncatch[i]%2==1) {
-				i+=L;
-				if(i>N) {
-					i=2*N-i-1;
-				}
+				i=(i+N-L)%N;
 			}else {
-				i-=L;
-				if(i<=0) {
-					i=N+i;
-				}
+				i=(i+L)%N;
 			}
 		}
 		System.out.println(count);

@@ -58,9 +58,12 @@ public class Main_8983 {
 			while(idx<launchPad2.length&&stand>launchPad2[idx]) {
 				idx++;
 			}
-			if(L>=Math.abs(launchPad2[idx]-animal[i].x)+animal[i].y) {
+			if(idx<launchPad2.length&&L>=Math.abs(launchPad2[idx]-animal[i].x)+animal[i].y) {
 				count++;
 			}else {
+				if(idx>=launchPad2.length) {
+					idx--;
+				}
 				while(idx>0&&stand<=launchPad2[idx]) {
 					idx--;
 				}
