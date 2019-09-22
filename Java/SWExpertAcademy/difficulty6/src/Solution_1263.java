@@ -34,7 +34,7 @@ public class Solution_1263 {
 		br.close();
 		bw.close();
 	}
-	public static int dijkstra(int v, int[][] graph) {//v 모두 돌아보면서 최솟값 찾기
+	public static int dijkstra(int v, int[][] graph) {//v 
 		int[] distance = new int[N+1];
 		boolean[] check = new boolean[N+1];
 		Arrays.fill(distance, Integer.MAX_VALUE);
@@ -67,9 +67,12 @@ public class Solution_1263 {
 			}
 		}
 		int dist= 0;
+		
 		for (int i = 1; i <= N; i++) {
 			dist+=distance[i];
+			System.out.print(distance[i]+" ");
 		}
+		System.out.println();
 		return dist;
 	}
 }
