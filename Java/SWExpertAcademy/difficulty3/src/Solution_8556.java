@@ -11,30 +11,26 @@ public class Solution_8556 {
 			//w 3 n 4
 			int west = 0;
 			int north = 0;
+			int angle = 0;
 			for (int i = 0; i < line.length(); i++) {
 				if(line.charAt(i)=='n') {
 					north++;
 					i+=3;
+					
 				}else if(line.charAt(i)=='w') {
 					west++;
 					i+=2;
 				}
 			}
-			System.out.println(west+" "+north);
-			String result = "";
-			if(west==0&&north==1) {
-				result="0";
-			}else if(west==1&&north==0) {
-				result="90";
-			}else {
-				int count = 0;
-				while((90*west)%(2<<count)==0) {
-					count++;
-				}
-				System.out.println(count);
-				System.out.println((90*west)/(1<<count)+"/"+(1<<north-count));
+			double denominator = Math.pow(2,( north + west - 2));
+			int forth = 45;
+			int numerator = 0;
+			for (int i = 0; i < west; i++) {
+				forth<<=i;
+				numerator+=forth;
 			}
-			System.out.println("#"+testCase+" "+result);
+			
+			System.out.println("#"+testCase+" "+numerator+"/"+denominator);
 		}
 	}
 }
