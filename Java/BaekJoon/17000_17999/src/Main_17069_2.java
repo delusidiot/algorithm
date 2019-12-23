@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -28,19 +27,6 @@ public class Main_17069_2 {
 	            }
 	        }
 	    }
-//		DFS2(1,2,1);
-//	    System.out.println("0");
-//	    for (int i = 1; i <= N; i++) {
-//			System.out.println(Arrays.toString(dp[0][i]));
-//		}
-//	    System.out.println("1");
-//	    for (int i = 1; i <= N; i++) {
-//			System.out.println(Arrays.toString(dp[1][i]));
-//		}
-//	    System.out.println("2");
-//	    for (int i = 1; i <= N; i++) {
-//			System.out.println(Arrays.toString(dp[2][i]));
-//		}
 		System.out.println(dp[0][N][N]+dp[1][N][N]+dp[2][N][N]);
 	}
 	static long count = 0;
