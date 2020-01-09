@@ -66,7 +66,7 @@ public class Main_3197_2 {
 
     private static boolean isConnect(int day) {
         Queue<Node> q = new LinkedList<>();
-        boolean flag = false;
+        boolean check = false;
         q.offer(swan);
         visit[swan.x][swan.y] = true;
 
@@ -78,15 +78,15 @@ public class Main_3197_2 {
                 int ny = node.y + dy[i];
                 if (nx < 0 || ny < 0 || nx >= n || ny >= m || visit[nx][ny] || melt[nx][ny] > day) continue;
                 if (lake[nx][ny] == 'L' && nx != swan.x && ny != swan.y) {
-                    flag = true;
+                    check = true;
                     break;
                 }
                 visit[nx][ny] = true;
                 q.offer(new Node(nx, ny));
             }
-            if (flag) break;
+            if (check) break;
         }
-        return flag;
+        return check;
     }
 
     private static class Node {
