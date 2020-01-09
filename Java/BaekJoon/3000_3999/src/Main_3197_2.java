@@ -53,8 +53,15 @@ public class Main_3197_2 {
                 q.offer(new Node(nx, ny));
             }
         }
-
+        for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				System.out.print(melt[i][j]);
+			}
+			System.out.println();
+		}
+        System.out.println(right +" "+left);
         day = (right + left) >> 1;
+		System.out.println(day);
         while (left <= right) {
             visit = new boolean[n][m];
             if (isConnect(day)) right = day - 1;
