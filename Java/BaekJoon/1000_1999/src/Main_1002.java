@@ -21,7 +21,17 @@ public class Main_1002 {
 			int r2 = Integer.parseInt(line[5]);
 			int position = 0;
 			
-			
+			long d = (x2-x1)*(x2-x1)+(y2-y1)*(y2-y1);//두점 사이의 거리 제곱
+			long rsub = (r1-r2)*(r1-r2);
+			long radd = (r1+r2)*(r1+r2);
+
+			if(x1==x2&&y1==y2&&r1==r2) {
+				position = -1;
+			}else if(d == radd || d == rsub) {
+				position = 1;
+			}else if(rsub < d && d < radd) {
+				position = 2;
+			}else position = 0;
 			
 			bw.write(String.valueOf(position)+"\n");
 		}
